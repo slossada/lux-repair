@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
 // Create the connection to the database
-const connection = new Sequelize('luxrepairDB', 'root', 'password', {
-  host: 'localhost',
+const connection = new Sequelize('va8mkqflxfvtc8kh', 'raah7c6pyub8rmvw', 'mkfdn7idex6db6au', {
+  host: 'cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   dialect: 'mysql',
   operatorsAliases: false
 });

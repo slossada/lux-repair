@@ -23,7 +23,7 @@ export class ApiService {
     headers.append('Content-Type', 'application/json');
 
     // Hacer la petición, se retorna una promesa
-    return this.http.post('http://localhost:3000/users/datos-empleado', data, { headers })
+    return this.http.post('users/datos-empleado', data, { headers })
       .map(res => res.json());
   }
 
@@ -36,7 +36,7 @@ export class ApiService {
     headers.append('Content-Type', 'application/json');
 
     // Hacer la petición, se retorna una promesa
-    return this.http.post('http://localhost:3000/users/registrar-vehiculo', data, { headers })
+    return this.http.post('users/registrar-vehiculo', data, { headers })
       .map(res => res.json());
   }
 
@@ -48,7 +48,7 @@ export class ApiService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
 
-    return this.http.get('http://localhost:3000/users/vehiculos', { headers })
+    return this.http.get('users/vehiculos', { headers })
       .map(res => res.json());
   }
 
@@ -58,7 +58,7 @@ export class ApiService {
     headers.append('Content-Type', 'application/json');
 
     // Hacer la petición, se retorna una promesa
-    return this.http.post('http://localhost:3000/users/eliminar-vehiculo', {id}, { headers: headers })
+    return this.http.post('users/eliminar-vehiculo', {id}, { headers: headers })
       .map(res => res.json());
   }
 
@@ -68,7 +68,7 @@ export class ApiService {
     headers.append('Content-Type', 'application/json');
 
     // Hacer la petición, se retorna una promesa
-    return this.http.post('http://localhost:3000/users/solicitar-orden', data, { headers: headers })
+    return this.http.post('users/solicitar-orden', data, { headers: headers })
       .map(res => res.json());
   }
 
