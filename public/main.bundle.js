@@ -101,6 +101,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_api_service__ = __webpack_require__("../../../../../src/app/services/api.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -132,6 +133,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Guards
+
+// Pipes
 
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
@@ -174,7 +177,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_18__services_validate_service__["a" /* ValidateService */],
                 __WEBPACK_IMPORTED_MODULE_19__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_21__guards_auth_guard__["a" /* AuthGuard */],
-                __WEBPACK_IMPORTED_MODULE_20__services_api_service__["a" /* ApiService */]
+                __WEBPACK_IMPORTED_MODULE_20__services_api_service__["a" /* ApiService */],
+                __WEBPACK_IMPORTED_MODULE_22__angular_common__["DatePipe"]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         })
@@ -207,7 +211,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col mx-0 mx-sm-4 mx-md-5 mx-lg-5 mx-xl-5 mt-4 mb-2\">\n        <h3>Dashboard</h3>\n    </div>\n</div>\n<div class=\"row mt-5 pb-5 main\">\n    <div class=\"col d-flex justify-content-center\">\n        <div *ngIf=\"this.rol === 'cliente'\" class=\"card-deck\">\n            <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n                <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/vehiculo-agregar.png\" alt=\"Imagen Agregar Vehiculo\" width=\"130\" height=\"140\">\n\n                <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3 mt-3\">\n                    <h5 class=\"card-title\">Registro</h5>\n                    <p class=\"card-text\">Registra un nuevo vehiculo para poder solicitar citas.</p>\n                    <a [routerLink]=\"['/form-vehiculo']\" class=\"btn btn-outline-primary mx-0 mx-sm-0 mx-md-0\">Registrar</a>\n                    \n                </div>\n            </div>\n            <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n                <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/vehiculo-ver.png\" alt=\"Imagen Ver Vehiculos\" width=\"130\" height=\"140\">\n                <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3\">\n                    <h5 class=\"card-title\">Garage</h5>\n                    <p class=\"card-text\">Gestiona todas los vehiculos asociados,solicita citas, edita la informacion o eliminalos</p>\n                    <a [routerLink]=\"['/garage']\" class=\"btn btn-outline-primary\">Ir al Garage</a>\n                </div>\n            </div>\n            <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n                <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/resume.png\" alt=\"Imagen Perfil\" width=\"130\" height=\"140\">\n                <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3 mt-3\">\n                    <h5 class=\"card-title\">Mi Perfil</h5>\n                    <p class=\"card-text\">Edita la informacion correspondiente a tu perfil</p>\n                    <a class=\"btn btn-outline-primary\" [routerLink]=\"['/profile']\">Perfil</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n    <div class=\"col mx-0 mx-sm-4 mx-md-5 mx-lg-5 mx-xl-5 mt-4 mb-2\">\n        <h3>Dashboard</h3>\n    </div>\n</div>\n<div class=\"row mt-5 pb-5 main\">\n    <div class=\"col d-flex justify-content-center\">\n\n        <!-- Card Deck del Cliente -->\n        <div *ngIf=\"this.rol === 'cliente'\" class=\"card-deck\">\n            <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n                <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/vehiculo-agregar.png\" alt=\"Imagen Agregar Vehiculo\" width=\"130\" height=\"140\">\n\n                <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3 mt-3\">\n                    <h5 class=\"card-title\">Registro</h5>\n                    <p class=\"card-text\">Registra un nuevo vehiculo para poder solicitar citas.</p>\n                    <a [routerLink]=\"['/form-vehiculo']\" class=\"btn btn-outline-primary mx-0 mx-sm-0 mx-md-0\">Registrar</a>\n                    \n                </div>\n            </div>\n            <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n                <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/vehiculo-ver.png\" alt=\"Imagen Ver Vehiculos\" width=\"130\" height=\"140\">\n                <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3\">\n                    <h5 class=\"card-title\">Garage</h5>\n                    <p class=\"card-text\">Gestiona todas los vehiculos asociados,solicita citas, edita la informacion o eliminalos</p>\n                    <a [routerLink]=\"['/garage']\" class=\"btn btn-outline-primary\">Ir al Garage</a>\n                </div>\n            </div>\n            <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n                <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/resume.png\" alt=\"Imagen Perfil\" width=\"130\" height=\"140\">\n                <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3 mt-3\">\n                    <h5 class=\"card-title\">Mi Perfil</h5>\n                    <p class=\"card-text\">Ve la informacion de tu perfil</p>\n                    <a class=\"btn btn-outline-primary\" [routerLink]=\"['/profile']\">Perfil</a>\n                </div>\n            </div>\n        </div>\n\n        <!-- Card Deck del Empleado -->\n        <div *ngIf=\"this.rol === 'empleado'\" class=\"card-deck\">\n        <!-- <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n            <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/vehiculo-agregar.png\" alt=\"Imagen Agregar Vehiculo\"\n            width=\"130\" height=\"140\">\n\n            <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3 mt-3\">\n            <h5 class=\"card-title\">Registro</h5>\n            <p class=\"card-text\">Registra un nuevo vehiculo para poder solicitar citas.</p>\n            <a [routerLink]=\"['/form-vehiculo']\" class=\"btn btn-outline-primary mx-0 mx-sm-0 mx-md-0\">Registrar</a>\n\n            </div>\n        </div>\n        <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n            <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/vehiculo-ver.png\" alt=\"Imagen Ver Vehiculos\"\n            width=\"130\" height=\"140\">\n            <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3\">\n            <h5 class=\"card-title\">Garage</h5>\n            <p class=\"card-text\">Gestiona todas los vehiculos asociados,solicita citas, edita la informacion o eliminalos</p>\n            <a [routerLink]=\"['/garage']\" class=\"btn btn-outline-primary\">Ir al Garage</a>\n            </div>\n        </div> -->\n        <div class=\"card text-center\" style=\"max-width: 18rem; max-height: 24rem;\">\n            <img class=\"img-responsive mx-auto mt-4 mb-2\" src=\"assets/dashboard-cliente/resume.png\" alt=\"Imagen Perfil\" width=\"130\" height=\"140\">\n            <div class=\"card-body px-sm-1 px-md-2 px-lg-3 px-xl-3 mt-3\">\n            <h5 class=\"card-title\">Mi Perfil</h5>\n            <p class=\"card-text\">Edita la informacion correspondiente a tu perfil</p>\n            <a class=\"btn btn-outline-primary\" [routerLink]=\"['/profile']\">Perfil</a>\n            </div>\n        </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -909,7 +913,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"main\">\n  <div class=\"row\">\n    <div class=\"col-11 col-md-8 col-lg-5 mx-auto mb-5\">\n      <div class=\"pt-5\" *ngIf=\"user\">\n        <!-- Nombre Completo -->\n        <h2 class=\"page-header pb-3\">{{user.Nombre}} {{user.Snombre}} {{user.Apellido}}</h2>\n\n        <!-- Lista de Datos -->\n        <ul class=\"list-group\">\n          <li class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Usuario:</h5>\n            <p>{{user.Username}}</p>\n          </li>\n          <li class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Correo:</h5>\n            <p>{{user.Email}}</p>\n          </li>\n          <li class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Cedula:</h5>\n            <p>{{user.Cedula}}</p>\n          </li>\n          <li *ngIf=\"this.rol != 'Cliente'\" class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Rol:</h5>\n            <p>{{this.rol}}</p>\n          </li>\n          <li *ngIf=\"this.rol != 'Cliente' && this.fechaNacimiento != null\" class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Fecha de Nacimiento:</h5>\n            <p>{{formatearFecha()}}</p>\n          </li>\n          <li *ngIf=\"this.rol != 'Cliente' && this.sexo != null\" class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Sexo:</h5>\n            <p>{{this.sexo}}</p>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"rol != 'Cliente'\" class=\"row mb-5\">\n    <div class=\"col-11 col-md-6 col-lg-4 mx-auto my-auto\">\n      <!-- Tarjeta -->\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <h5 *ngIf=\"completoFormulario()\" class=\"pt-3\">Actualiza tus datos</h5>\n          <h5 *ngIf=\"!completoFormulario()\" class=\"pt-3\">Complete el formulario</h5>\n        </div>\n        <div class=\"card-body\">\n          <p *ngIf=\"completoFormulario()\">Si quiere hacer alguna modificación a sus datos personales puede hacerlo aquí.</p>\n          <p *ngIf=\"!completoFormulario()\">Nos faltan algunos de sus datos personales. Por favor, tómese un momento para llenarlos.</p>\n          <a class=\"btn btn-primary\" [routerLink]=\"['/form-empleado']\">Ir al formulario</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"main\">\n  <div class=\"row\">\n    <div class=\"col-11 col-md-8 col-lg-5 mx-auto mb-5\">\n      <div class=\"pt-5\" *ngIf=\"user\">\n        <!-- Nombre Completo -->\n        <h2 class=\"page-header pb-3\">{{user.Nombre}} {{user.Snombre}} {{user.Apellido}}</h2>\n\n        <!-- Lista de Datos -->\n        <ul class=\"list-group\">\n          <li class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Usuario:</h5>\n            <p>{{user.Username}}</p>\n          </li>\n          <li class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Correo:</h5>\n            <p>{{user.Email}}</p>\n          </li>\n          <li class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Cedula:</h5>\n            <p>{{user.Cedula}}</p>\n          </li>\n          <li *ngIf=\"this.rol != 'Cliente'\" class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Rol:</h5>\n            <p>{{rol}}</p>\n          </li>\n          <li *ngIf=\"this.rol != 'Cliente' && this.fechaNacimiento != null\" class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Fecha de Nacimiento:</h5>\n            <p>{{fechaNacimiento}}</p>\n          </li>\n          <li *ngIf=\"this.rol != 'Cliente' && this.sexo != null\" class=\"list-group-item d-flex justify-content-between pt-4\">\n            <h5 class=\"pr-3\">Sexo:</h5>\n            <p>{{sexo}}</p>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"rol != 'Cliente'\" class=\"row mb-5\">\n    <div class=\"col-11 col-md-6 col-lg-4 mx-auto my-auto\">\n      <!-- Tarjeta -->\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <h5 *ngIf=\"completoFormulario()\" class=\"pt-3\">Actualiza tus datos</h5>\n          <h5 *ngIf=\"!completoFormulario()\" class=\"pt-3\">Complete el formulario</h5>\n        </div>\n        <div class=\"card-body\">\n          <p *ngIf=\"completoFormulario()\">Si quiere hacer alguna modificación a sus datos personales puede hacerlo aquí.</p>\n          <p *ngIf=\"!completoFormulario()\">Nos faltan algunos de sus datos personales. Por favor, tómese un momento para llenarlos.</p>\n          <a class=\"btn btn-primary\" [routerLink]=\"['/form-empleado']\">Ir al formulario</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -921,6 +925,7 @@ module.exports = "\n<div class=\"main\">\n  <div class=\"row\">\n    <div class=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -933,18 +938,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(authService, router) {
+    function ProfileComponent(authService, router, datePipe) {
         this.authService = authService;
         this.router = router;
+        this.datePipe = datePipe;
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.authService.getProfile().subscribe(function (profile) {
             _this.user = profile.user;
-            // this.rol = profile.user.rol;
+            // Guarda el rol con la primera letra en Uppercase
             _this.rol = profile.user.rol.charAt(0).toUpperCase() + profile.user.rol.slice(1);
-            _this.fechaNacimiento = profile.user.fechaNacimiento;
+            // Corrige error en el formato de la fecha
+            var fecha = profile.user.fechaNacimiento;
+            var day = Number(fecha.slice(8, 10)) + 1;
+            var dayString = day.toString();
+            if (day < 10) {
+                dayString = '0' + day;
+            }
+            // Guarda la fecha formateada
+            _this.fechaNacimiento = _this.datePipe.transform(fecha.slice(0, 8) + dayString + fecha.slice(10));
             _this.sexo = profile.user.sexo;
             console.log(_this.user);
         }, function (err) {
@@ -955,55 +970,6 @@ var ProfileComponent = /** @class */ (function () {
     ProfileComponent.prototype.completoFormulario = function () {
         return this.fechaNacimiento && this.sexo;
     };
-    ProfileComponent.prototype.formatearFecha = function () {
-        var date = new Date(this.fechaNacimiento);
-        var day = date.getDay();
-        var month = date.getMonth();
-        var year = date.getFullYear();
-        var strMonth = '';
-        switch (month) {
-            case 0:
-                strMonth = 'enero';
-                break;
-            case 1:
-                strMonth = 'febrero';
-                break;
-            case 2:
-                strMonth = 'marzo';
-                break;
-            case 3:
-                strMonth = 'abril';
-                break;
-            case 4:
-                strMonth = 'mayo';
-                break;
-            case 5:
-                strMonth = 'junio';
-                break;
-            case 6:
-                strMonth = 'julio';
-                break;
-            case 7:
-                strMonth = 'agosto';
-                break;
-            case 8:
-                strMonth = 'septiembre';
-                break;
-            case 9:
-                strMonth = 'octubre';
-                break;
-            case 10:
-                strMonth = 'noviembre';
-                break;
-            case 11:
-                strMonth = 'diciembre';
-                break;
-            default:
-                strMonth = month.toString();
-                break;
-        }
-        return day + " " + strMonth + " " + year;
-    };
     ProfileComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-profile',
@@ -1011,7 +977,8 @@ var ProfileComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common__["DatePipe"]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -1324,8 +1291,9 @@ var ApiService = /** @class */ (function () {
     ApiService.prototype.getVehicles = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         // Busca el token del usuario que esta ingresado en el sistema actualmente
-        this.loadToken();
-        headers.append('Authorization', this.authToken);
+        var token = localStorage.getItem('id_token');
+        // Settear los encabezados para la petición al API
+        headers.append('Authorization', token);
         headers.append('Content-Type', 'application/json');
         return this.http.get('users/vehiculos', { headers: headers })
             .map(function (res) { return res.json(); });
@@ -1345,10 +1313,6 @@ var ApiService = /** @class */ (function () {
         // Hacer la petición, se retorna una promesa
         return this.http.post('users/solicitar-orden', data, { headers: headers })
             .map(function (res) { return res.json(); });
-    };
-    ApiService.prototype.loadToken = function () {
-        var token = localStorage.getItem('id_token');
-        this.authToken = token;
     };
     ApiService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1388,18 +1352,21 @@ var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
     }
+    // Registra al usuario
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('users/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    // Autentica al usuario
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('users/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    // Obtiene la informacion del perfil de un usuario
     AuthService.prototype.getProfile = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         // Fetches the token of the currently logged in user from localStorage
@@ -1409,23 +1376,26 @@ var AuthService = /** @class */ (function () {
         return this.http.get('users/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    AuthService.prototype.loadToken = function () {
-        var token = localStorage.getItem('id_token');
-        this.authToken = token;
-    };
+    // Guarda la informacion de un usuario
     AuthService.prototype.storeUserData = function (token, user) {
         localStorage.setItem('id_token', token);
         localStorage.setItem('user', JSON.stringify(user));
         this.authToken = token;
         this.user = user;
     };
+    // Valida el token del usuario
     AuthService.prototype.loggedIn = function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])('id_token');
     };
+    // Hace el logout borrando la informacion del usuario almacenada en localStorage
     AuthService.prototype.logout = function () {
         this.authToken = null;
         this.user = null;
         localStorage.clear();
+    };
+    AuthService.prototype.loadToken = function () {
+        var token = localStorage.getItem('id_token');
+        this.authToken = token;
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
